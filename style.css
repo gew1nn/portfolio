@@ -24,7 +24,7 @@ body {
 
 .hero-content {
     text-align: left;
-    max-width: 50%;
+    max-width: 40%;
 }
 
 .hero-content h2 {
@@ -84,7 +84,7 @@ body {
 
 .hero-image img {
     width: 100%;
-    max-width: 300px; /* Ограничиваем максимальный размер фото */
+    max-width: 450px; /* Ограничиваем максимальный размер фото */
     height: auto; /* Сохраняем пропорции */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
@@ -107,6 +107,12 @@ body {
     width: 280px;
     transition: 0.3s;
     box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+}
+
+.card p {
+    font-size: 0.9rem; /* Измените размер текста на нужный вам */
+    color: #ccc; /* Цвет текста */
+    margin: 10px 0; /* Отступы */
 }
 
 .card:hover {
