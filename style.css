@@ -64,9 +64,28 @@ body {
 
 .hero-image img {
     width: 100%;
-    max-width: 350px;
+    max-width: 300px; /* Ограничиваем максимальный размер фото */
+    height: auto; /* Сохраняем пропорции */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    object-fit: cover; /* Делаем так, чтобы фото не растягивалось */
+}
+
+/* 🔹 ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .hero-image img {
+        max-width: 200px; /* Еще меньше фото на мобильных */
+    }
 }
 
 /* 🔹 КАРТОЧКИ */
