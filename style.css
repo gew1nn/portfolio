@@ -1,14 +1,17 @@
+/* Общие стили */
 body {
     font-family: Arial, sans-serif;
-    background: #000;
+    background: #000; /* Темный фон */
     color: #fff;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
+/* Заголовок */
 header {
     padding: 20px;
+    background: #000;
 }
 
 h1 {
@@ -21,38 +24,52 @@ p {
     color: #ccc;
 }
 
-.social-icons img {
+/* Социальные иконки */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a img {
     width: 30px;
-    margin: 10px;
+    filter: invert(1); /* Делаем иконки белыми */
     transition: transform 0.3s;
 }
 
-.social-icons img:hover {
+.social-icons a:hover img {
     transform: scale(1.1);
 }
 
+/* Блоки карточек */
 .cards, .projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 40px 0;
+    gap: 20px;
 }
 
+/* Оформление карточек */
 .card, .project-card {
     background: #111;
     padding: 20px;
-    margin: 10px;
     border-radius: 10px;
-    width: 250px;
+    width: 280px;
     transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(255,255,255,0.1);
 }
 
 .card:hover, .project-card:hover {
     background: #222;
+    transform: translateY(-5px);
 }
 
+/* Нижний колонтитул */
 footer {
     padding: 20px;
     background: #111;
     font-size: 0.9rem;
+    color: #777;
 }
