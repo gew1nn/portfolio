@@ -1,59 +1,85 @@
-/* Общие стили */
-body {
-    font-family: Arial, sans-serif;
-    background: #000; /* Темный фон */
-    color: #fff;
+/* 🔹 ОБЩИЕ СТИЛИ */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000;
+    color: #fff;
     text-align: center;
 }
 
-/* Заголовок */
-header {
-    padding: 20px;
-    background: #000;
+/* 🔹 ГЛАВНЫЙ БЛОК (HERO) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 5% 10%;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: bold;
+.hero-content {
+    text-align: left;
+    max-width: 50%;
 }
 
-p {
-    font-size: 1.2rem;
+.hero-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
     color: #ccc;
+    margin: 10px 0;
 }
 
-/* Социальные иконки */
+/* 🔹 СОЦСЕТИ */
 .social-icons {
     display: flex;
-    justify-content: center;
     gap: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-.social-icons a img {
-    width: 30px;
-    filter: invert(1); /* Делаем иконки белыми */
+.social-icons img {
+    width: 35px;
+    filter: invert(1);
     transition: transform 0.3s;
 }
 
-.social-icons a:hover img {
+.social-icons img:hover {
     transform: scale(1.1);
 }
 
-/* Блоки карточек */
-.cards, .projects {
+/* 🔹 ФОТО СПРАВА */
+.hero-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 КАРТОЧКИ */
+.cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 40px 0;
     gap: 20px;
+    padding: 60px 10%;
 }
 
-/* Оформление карточек */
-.card, .project-card {
-    background: #111;
+.card {
+    background: #222;
     padding: 20px;
     border-radius: 10px;
     width: 280px;
@@ -61,15 +87,53 @@ p {
     box-shadow: 0 4px 6px rgba(255,255,255,0.1);
 }
 
-.card:hover, .project-card:hover {
-    background: #222;
+.card:hover {
+    background: #333;
     transform: translateY(-5px);
 }
 
-/* Нижний колонтитул */
+/* 🔹 ПОДВАЛ */
 footer {
     padding: 20px;
     background: #111;
     font-size: 0.9rem;
     color: #777;
+}
+
+/* 🔹 АДАПТИВНОСТЬ */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .hero-image img {
+        max-width: 250px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* 🔹 АНИМАЦИЯ ПОЯВЛЕНИЯ */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
