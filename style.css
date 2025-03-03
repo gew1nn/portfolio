@@ -33,7 +33,7 @@ body {
 }
 
 .hero-content p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #ccc;
     margin: 10px 0;
 }
@@ -55,6 +55,26 @@ body {
     transform: scale(1.1);
 }
 
+.social-icons a:nth-child(1) img:hover {
+    filter: invert(0) sepia(1) saturate(5) hue-rotate(0deg); /* Красный */
+}
+
+.social-icons a:nth-child(2) img:hover {
+    filter: invert(0) sepia(1) saturate(5) hue-rotate(100deg); /* Зеленый */
+}
+
+.social-icons a:nth-child(3) img:hover {
+    filter: invert(0) sepia(1) saturate(5) hue-rotate(200deg); /* Синий */
+}
+
+.social-icons a:nth-child(4) img:hover {
+    filter: invert(0) sepia(1) saturate(5) hue-rotate(300deg); /* Желтый */
+}
+
+.social-icons a:nth-child(5) img:hover {
+    filter: invert(0) sepia(1) saturate(5) hue-rotate(50deg); /* Фиолетовый */
+}
+
 /* 🔹 ФОТО СПРАВА */
 .hero-image {
     width: 50%;
@@ -69,23 +89,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
     object-fit: cover; /* Делаем так, чтобы фото не растягивалось */
-}
-
-/* 🔹 ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-image {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .hero-image img {
-        max-width: 200px; /* Еще меньше фото на мобильных */
-    }
 }
 
 /* 🔹 КАРТОЧКИ */
@@ -126,22 +129,13 @@ footer {
         text-align: center;
     }
 
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-    }
-
     .hero-image {
         width: 100%;
         margin-top: 20px;
     }
 
     .hero-image img {
-        max-width: 250px;
-    }
-
-    .card {
-        width: 90%;
+        max-width: 200px; /* Еще меньше фото на мобильных */
     }
 }
 
