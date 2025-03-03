@@ -1,8 +1,16 @@
+:root {
+    --primary-color: #252525;
+    --secondary-color: #f5f5f5;
+    --accent-color: orange;
+    --text-color: #333;
+    --background-color: black;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #252525;
+    background: #f5f5f5;
     color: #333;
 }
 
@@ -10,7 +18,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: black;
+    background: var(--background-color);
     padding: 20px;
     color: white;
 }
@@ -35,7 +43,7 @@ nav a {
 
 .btn {
     display: inline-block;
-    background: orange;
+    background: var(--accent-color);
     padding: 10px 20px;
     color: white;
     text-decoration: none;
@@ -57,11 +65,17 @@ nav a {
 }
 
 .project-card {
-    background: white;
+    background: var(--primary-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
 .project-card img {
@@ -74,4 +88,14 @@ footer {
     background: black;
     color: white;
     padding: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
