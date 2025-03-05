@@ -39,11 +39,11 @@ body {
 
 .hero-content {
     text-align: left;
-    max-width: 40%;
+    max-width: 45%;
 }
 
 .hero-content h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
 }
 
@@ -233,26 +233,77 @@ footer {
 /* 🔹 АДАПТИВНОСТЬ */
 @media (max-width: 768px) {
     .hero {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column;     /* Кладём текст и картинку в столбик */
+        justify-content: center;    /* Выравниваем по центру */
+        align-items: center;
+        height: auto;              /* Убираем фиксированную высоту */
+        padding: 20px;             /* Уменьшаем отступы */
+        text-align: center;        /* Центрируем текст */
     }
 
-    .hero-image {
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;         /* Уменьшаем размер заголовка */
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;        /* Чуть меньше шрифт */
+        line-height: 1.4;
+    }
+
+     /* Соц. иконки тоже по центру */
+     .social-icons {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+     /* Картинка в hero */
+     .hero-image {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-image img {
-        max-width: 200px;
+        max-width: 200px;          /* Уменьшаем максимально допустимую ширину */
+        height: auto;
+    }
+
+    .cards {
+        flex-direction: column;     /* Выстраиваем карточки в столбик */
+        padding: 20px;
+        gap: 15px;
     }
 
     .card {
-        width: 90%;
+        width: 100%;               /* На всю ширину контейнера */
+        margin: 0 auto;            /* Центрируем карточку */
     }
 
+    /* Портфолио */
+    #portfolio {
+        padding: 20px;
+    }
+    .portfolio-grid {
+        display: flex;
+        flex-direction: column;     /* Одна колонка */
+        gap: 20px;
+    }
     .portfolio-item {
         width: 100%;
         height: auto;
+        padding: 15px;
+    }
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
     }
 
     .modal-content {
