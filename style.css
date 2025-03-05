@@ -51,27 +51,7 @@ body {
 }
 
 .social-icons img:hover {
-    transform: scale(1.2);
-}
-
-.social-icons a:nth-child(1) img:hover {
-    filter: invert(0) sepia(1) saturate(5) hue-rotate(0deg); /* Красный */
-}
-
-.social-icons a:nth-child(2) img:hover {
-    filter: invert(0) sepia(1) saturate(5) hue-rotate(100deg); /* Зеленый */
-}
-
-.social-icons a:nth-child(3) img:hover {
-    filter: invert(0) sepia(1) saturate(5) hue-rotate(200deg); /* Синий */
-}
-
-.social-icons a:nth-child(4) img:hover {
-    filter: invert(0) sepia(1) saturate(5) hue-rotate(300deg); /* Желтый */
-}
-
-.social-icons a:nth-child(5) img:hover {
-    filter: invert(0) sepia(1) saturate(5) hue-rotate(50deg); /* Фиолетовый */
+    transform: scale(1.1);
 }
 
 /* 🔹 ФОТО СПРАВА */
@@ -106,12 +86,7 @@ body {
     width: 280px;
     transition: 0.3s;
     box-shadow: 0 4px 6px rgba(255,255,255,0.1);
-}
-
-.card p {
-    font-size: 0.9rem; /* Измените размер текста на нужный вам */
-    color: #ccc; /* Цвет текста */
-    margin: 10px 0; /* Отступы */
+    cursor: pointer;
 }
 
 .card:hover {
@@ -119,41 +94,63 @@ body {
     transform: translateY(-5px);
 }
 
-/* 🔹 ПОДВАЛ */
-footer {
-    padding: 20px;
-    background: #111;
-    font-size: 0.9rem;
-    color: #777;
-}
-
-/* 🔹 АДАПТИВНОСТЬ */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-image {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .hero-image img {
-        max-width: 200px; /* Еще меньше фото на мобильных */
-    }
-}
-
-/* 🔹 АНИМАЦИЯ ПОЯВЛЕНИЯ */
-section {
+/* 🔹 МОДАЛЬНОЕ ОКНО */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-in-out; /* Более плавное появление */
+    transform: scale(0.8);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-section.visible {
+.modal.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
+    display: flex;
+}
+
+.modal-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    color: #fff;
+    position: relative;
+}
+
+/* 🔹 КНОПКА ЗАКРЫТИЯ */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #ff5050;
+}
+
+/* 🔹 ИЗОБРАЖЕНИЕ В МОДАЛЬНОМ ОКНЕ */
+.modal-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
 /* 🔹 СЕКЦИЯ ПОРТФОЛИО */
@@ -188,12 +185,14 @@ section.visible {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 6px rgba(255,255,255,0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .portfolio-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(255,255,255,0.15);
 }
 
 /* 🔹 ОДИНАКОВЫЕ КВАДРАТНЫЕ ИЗОБРАЖЕНИЯ */
@@ -204,8 +203,52 @@ section.visible {
     border-radius: 5px;
 }
 
-.portfolio-item p {
+/* 🔹 ПОДВАЛ */
+footer {
+    padding: 20px;
+    background: #111;
     font-size: 0.9rem;
-    color: #ccc;
-    margin-top: 5px;
+    color: #777;
+}
+
+/* 🔹 АДАПТИВНОСТЬ */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .hero-image img {
+        max-width: 200px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .portfolio-item {
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* 🔹 АНИМАЦИЯ ПОЯВЛЕНИЯ */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

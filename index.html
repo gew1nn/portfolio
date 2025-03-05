@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Портфолио веб-разработчика и дизайнера Speesh Style. Создаю современные сайты и приложения.">
-    <meta name="keywords" content="веб-разработка, дизайн, портфолио, сайты, приложения">
-    <title>Портфолио</title>
+    <meta name="description" content="Портфолио">
+    <meta name="keywords" content="дизайн, портфолио, сайты, приложения">
+    <title>Портфолио | Турат Жанышбеков</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
         <section class="hero">
             <div class="hero-content">
                 <h2>Привет, я Турат!</h2>
-                <p>2003-года рождения, занимаюсь дизайном. Работаю с программами как After Effects, Premiere Pro, Photoshop, Illustrator, InDesign</p>
+                <p>2003 года рождения, занимаюсь дизайном. Работаю с программами: After Effects, Premiere Pro, Photoshop, Illustrator, InDesign.</p>
                 <div class="social-icons">
                     <a href="https://www.youtube.com/@turat_zhenishbekov" target="_blank">
                         <img src="images/youtube.svg" data-gif="images/youtube.gif" alt="YouTube" class="social-img">
@@ -34,31 +34,31 @@
                         <img src="images/email.svg" data-gif="images/email.gif" alt="Email" class="social-img">
                     </a>
                 </div>
-                
             </div>
             <div class="hero-image">
-                <img id="random-photo" src="images/default.jpg">
+                <img id="random-photo" src="images/default.jpg" alt="Фото Турата">
             </div>
         </section>
 
+        <!-- 🔹 Секция с карточками (Education, Content Creation, Other Achievements) -->
         <section id="me" class="cards">
-            <div class="card">
+            <div class="card" data-title="Образование" data-image="images/education.jpg" data-description="Я учусь на Сицилии, Италия, направление Дата Анализ.">
                 <h3>Education</h3>
-                <p>Учусь я на Сицилии, Италия, направление Дата Анализ.</p>
+                <p>Учусь на Сицилии, направление Дата Анализ.</p>
             </div>
-            <div class="card">
+            <div class="card" data-title="Контент-мейкинг" data-image="images/content.jpg" data-description="Занимаюсь созданием контента уже 3 года.">
                 <h3>Content Creation</h3>
-                <p>Занимаюсь этим уже 3-год</p>
+                <p>Занимаюсь этим уже 3 года.</p>
             </div>
-            <div class="card">
+            <div class="card" data-title="Другие достижения" data-image="images/achievements.jpg" data-description="Работал волонтером, участвовал в различных проектах и конкурсах.">
                 <h3>Other Achievements</h3>
-                <p>Волонтёрства и разные достижения</p>
+                <p>Волонтерства и различные достижения.</p>
             </div>
         </section>
         
+        <!-- 🔹 Секция портфолио -->
         <section id="portfolio">
             <h2>Портфолио</h2>
-            <br>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <img src="images/sample2.png" alt="Работа 1">
@@ -71,19 +71,32 @@
                 <div class="portfolio-item">
                     <img src="images/work3.jpg" alt="Работа 3">
                     <p>Работа 3</p>
-                </div><div class="portfolio-item">
-                    <img src="images/work3.jpg" alt="Работа 4">
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/work4.jpg" alt="Работа 4">
                     <p>Работа 4</p>
-                </div><div class="portfolio-item">
-                    <img src="images/work3.jpg" alt="Работа 5">
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/work5.jpg" alt="Работа 5">
                     <p>Работа 5</p>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- 🔹 Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Заголовок</h2>
+            <img id="modal-image" src="images/default.jpg" alt="Изображение" class="modal-img">
+            <p id="modal-description">Описание</p>
+        </div>
+    </div>
+
+    <!-- 🔹 Футер -->
     <footer>
-        <p>абоба</p>
+        <p>© 2024 Турат Жанышбеков | Все права защищены</p>
         <a href="https://lordicon.com/">Icons by Lordicon.com</a>
     </footer>
 
