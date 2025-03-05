@@ -9,28 +9,28 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
-
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-content">
                 <h2>Привет, я Турат!</h2>
                 <p>2003 года рождения, занимаюсь дизайном. Работаю с программами: After Effects, Premiere Pro, Photoshop, Illustrator, InDesign.</p>
                 <div class="social-icons">
-                    <a href="https://www.youtube.com/@turat_zhenishbekov" target="_blank">
+                    <a href="https://www.youtube.com/@turat_zhenishbekov" target="_blank" title="YouTube">
                         <img src="images/youtube.svg" data-gif="images/youtube.gif" alt="YouTube" class="social-img">
                     </a>
-                    <a href="https://t.me/gew1nn" target="_blank">
+                    <a href="https://t.me/gew1nn" target="_blank" title="Telegram">
                         <img src="images/telegram.svg" data-gif="images/telegram.gif" alt="Telegram" class="social-img">
                     </a>
-                    <a href="https://www.linkedin.com/in/turat-zhenishbekov/" target="_blank">
+                    <a href="https://www.linkedin.com/in/turat-zhenishbekov/" target="_blank" title="LinkedIn">
                         <img src="images/linkedin.svg" data-gif="images/linkedin.gif" alt="LinkedIn" class="social-img">
                     </a>
-                    <a href="https://www.instagram.com/turat_zhenishbekov" target="_blank">
+                    <a href="https://www.instagram.com/turat_zhenishbekov" target="_blank" title="Instagram">
                         <img src="images/instagram.svg" data-gif="images/instagram.gif" alt="Instagram" class="social-img">
                     </a>
-                    <a href="mailto:gew1nn@yahoo.com">
+                    <a href="mailto:gew1nn@yahoo.com" title="Email">
                         <img src="images/email.svg" data-gif="images/email.gif" alt="Email" class="social-img">
                     </a>
                 </div>
@@ -40,7 +40,7 @@
             </div>
         </section>
 
-        <!-- 🔹 Секция с карточками (Education, Content Creation, Other Achievements) -->
+        <!-- Секция с карточками (Education, Content Creation, Other Achievements) -->
         <section id="me" class="cards">
             <div class="card" data-title="Образование" data-image="images/education.jpg" data-description="Я учусь на Сицилии, Италия, направление Дата Анализ.">
                 <h3>Education</h3>
@@ -56,7 +56,7 @@
             </div>
         </section>
         
-        <!-- 🔹 Секция портфолио -->
+        <!-- Секция портфолио -->
         <section id="portfolio">
             <h2>Портфолио</h2>
             <div class="portfolio-grid">
@@ -84,21 +84,19 @@
         </section>
     </main>
 
-    <!-- 🔹 Модальное окно -->
-    <div id="modal" class="modal">
+    <!-- Модальное окно с улучшенной доступностью -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" tabindex="0" role="button" aria-label="Закрыть окно">&times;</span>
             <h2 id="modal-title">Заголовок</h2>
-            <img id="modal-image" src="images/default.jpg" alt="Изображение" class="modal-img">
+            <img id="modal-image" src="images/d.jpg" alt="Изображение" class="modal-img">
             <p id="modal-description">Описание</p>
         </div>
     </div>
 
-    <!-- 🔹 Футер -->
+    <!-- Футер -->
     <footer>
-        <p>© 2024 Турат Жанышбеков | Все права защищены</p>
-        <a href="https://lordicon.com/">Icons by Lordicon.com</a>
+        <p>Турат Женишбеков</p>
     </footer>
-
 </body>
 </html>
