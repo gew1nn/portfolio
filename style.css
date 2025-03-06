@@ -183,6 +183,12 @@ body {
     margin-bottom: 20px;
 }
 
+#portfolio p {
+    font-size: 0.9rem;
+    padding: 3%;
+    font-family: 'Roboto', sans-serif;
+}
+
 .portfolio-grid {
     display: flex;
     flex-wrap: wrap;
