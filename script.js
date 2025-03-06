@@ -102,4 +102,26 @@ document.addEventListener("DOMContentLoaded", function () {
             closeModalWindow();
         }
     });
+
+    /* 6. СМЕНА СТАТИЧНОГО ИЗОБРАЖЕНИЯ НА GIF ДЛЯ ПОРТФОЛИО, КОТОРЫЙ ВОСПРОИЗВОДИТСЯ ДО КОНЦА */
+    document.querySelectorAll("#portfolio .portfolio-item img").forEach(img => {
+        const staticSrc = img.src;
+        const gifSrc = img.getAttribute("data-gif");
+        // Используем значение из data-duration или значение по умолчанию 3000 мс
+        const duration = parseInt(img.getAttribute("data-duration"), 10) || 3000;
+        let timer = null;
+    
+        img.addEventListener("mouseenter", () => {
+            if (!timer && gifSrc) {
+                img.src = gifSrc;
+                timer = setTimeout(() => {
+                    img.src = staticSrc;
+                    timer = null;
+                }, duration);
+            }
+        });
+    
+        // При уходе курсора не меняем src, чтобы gif успел воспроизвестись до конца.
+    });
+
 });
